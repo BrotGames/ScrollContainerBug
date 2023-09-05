@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfu7dh2xl5oll"]
+
+[ext_resource type="Script" path="res://PanelScript.gd" id="1_lxc17"]
+
+[sub_resource type="Gradient" id="Gradient_w4am2"]
+offsets = PackedFloat32Array(0, 0.548387, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0709677, 0.0709677, 0.0709677, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kdeof"]
+gradient = SubResource("Gradient_w4am2")
+
+[sub_resource type="Gradient" id="Gradient_dq6d2"]
+offsets = PackedFloat32Array(0, 0.0967742, 0.896774, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.741935, 0.741935, 0.741935, 1, 0.12078, 0.12078, 0.12078, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yqjlm"]
+gradient = SubResource("Gradient_dq6d2")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 354.0
+offset_bottom = 128.0
+script = ExtResource("1_lxc17")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="Panel/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/ScrollContainer/HBoxContainer/Control"]
+scale = Vector2(0.492188, 124)
+texture_normal = SubResource("GradientTexture1D_kdeof")
+texture_pressed = SubResource("GradientTexture1D_yqjlm")
+
+[node name="Control2" type="Control" parent="Panel/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/ScrollContainer/HBoxContainer/Control2"]
+scale = Vector2(0.492188, 124)
+texture_normal = SubResource("GradientTexture1D_kdeof")
+texture_pressed = SubResource("GradientTexture1D_yqjlm")
+
+[node name="Control3" type="Control" parent="Panel/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/ScrollContainer/HBoxContainer/Control3"]
+scale = Vector2(0.492188, 124)
+texture_normal = SubResource("GradientTexture1D_kdeof")
+texture_pressed = SubResource("GradientTexture1D_yqjlm")
+
+[node name="Control4" type="Control" parent="Panel/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/ScrollContainer/HBoxContainer/Control4"]
+scale = Vector2(0.492188, 124)
+texture_normal = SubResource("GradientTexture1D_kdeof")
+texture_pressed = SubResource("GradientTexture1D_yqjlm")
+
+[connection signal="pressed" from="Panel/ScrollContainer/HBoxContainer/Control/TouchScreenButton" to="Panel" method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="Panel/ScrollContainer/HBoxContainer/Control/TouchScreenButton" to="Panel" method="_on_touch_screen_button_released"]
+[connection signal="pressed" from="Panel/ScrollContainer/HBoxContainer/Control2/TouchScreenButton" to="Panel" method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="Panel/ScrollContainer/HBoxContainer/Control2/TouchScreenButton" to="Panel" method="_on_touch_screen_button_released"]
+[connection signal="pressed" from="Panel/ScrollContainer/HBoxContainer/Control3/TouchScreenButton" to="Panel" method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="Panel/ScrollContainer/HBoxContainer/Control3/TouchScreenButton" to="Panel" method="_on_touch_screen_button_released"]
+[connection signal="pressed" from="Panel/ScrollContainer/HBoxContainer/Control4/TouchScreenButton" to="Panel" method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="Panel/ScrollContainer/HBoxContainer/Control4/TouchScreenButton" to="Panel" method="_on_touch_screen_button_released"]
